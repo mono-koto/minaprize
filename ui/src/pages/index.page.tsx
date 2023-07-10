@@ -1,20 +1,19 @@
-
-import Head from 'next/head';
-import Image from 'next/image';
-import { useEffect } from 'react';
-import GradientBG from '../components/GradientBG.js';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import Image from "next/image";
+import { useEffect } from "react";
+import GradientBG from "../components/GradientBG.js";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   useEffect(() => {
     (async () => {
-      const { Mina, PublicKey } = await import('snarkyjs');
-      const { Add } = await import('../../../contracts/build/src/');
+      const { Mina, PublicKey } = await import("snarkyjs");
+      const { Add } = await import("../../../contracts/build/src/");
 
       // Update this to use the address (public key) for your zkApp account.
       // To try it out, you can try this address for an example "Add" smart contract that we've deployed to
       // Berkeley Testnet B62qkwohsqTBPsvhYE8cPZSpzJMgoKn4i1LQRuBAtVXWpaT4dgH6WoA.
-      const zkAppAddress = '';
+      const zkAppAddress = "";
       // This should be removed once the zkAppAddress is updated.
       if (!zkAppAddress) {
         console.error(
@@ -28,35 +27,26 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mina zkApp UI</title>
-        <meta name="description" content="built with SnarkyJS" />
+        <title>🎁 MinaPrize 🎁</title>
+        <meta
+          name="description"
+          content="A no-loss, prize-linked savings protocol powered by zero-knowledge proofs on Mina"
+        />
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
       <GradientBG>
         <main className={styles.main}>
           <div className={styles.center}>
-            <a
-              href="https://minaprotocol.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className={styles.logo}
-                src="/assets/HeroMinaLogo.svg"
-                alt="Mina Logo"
-                width="191"
-                height="174"
-                priority
-              />
-            </a>
+            <span className="text-4xl">🎁 MinaPrize</span>
             <p className={styles.tagline}>
-              built with
-              <code className={styles.code}> SnarkyJS</code>
+              No-loss, prize-linked savings protocol for
+              <code className={styles.code}> Mina</code>
             </p>
           </div>
-          <p className={styles.start}>
+          {/* <p className={styles.start}>
             Get started by editing
-            <code className={styles.code}> src/pages/index.js</code> or <code className={styles.code}> src/pages/index.tsx</code>
+            <code className={styles.code}> src/pages/index.js</code> or{" "}
+            <code className={styles.code}> src/pages/index.tsx</code>
           </p>
           <div className={styles.grid}>
             <a
@@ -139,7 +129,7 @@ export default function Home() {
               </h2>
               <p>Deploy a zkApp to Berkeley Testnet</p>
             </a>
-          </div>
+          </div> */}
         </main>
       </GradientBG>
     </>
